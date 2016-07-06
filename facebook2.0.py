@@ -82,7 +82,7 @@ def get_preds(cell_train, cell_test, n_neighbors):
     return y_pred, clf.classes_
 
 def calculate_distance(distances):
-    return distances ** -2.37
+    return distances ** -2.25
 
 # Faster than argsort at getting top three predictions
 @jit(nopython=True)
@@ -319,7 +319,7 @@ y_cuts = 25 # number of cuts along y
 t_cuts = 4 # number of cuts along time.
 x_border_aug = 0.0055 * fw[4] # expansion of x border on train
 y_border_aug = 0.0045 * fw[5] # expansion of y border on train
-time_aug = 2.9
+time_aug = 3
 n_neighbors = 0
 columns = ['x', 'y', 'minute_sin', 'minute_cos', 'accuracy',
            'day_of_year_sin', 'day_of_year_cos',
